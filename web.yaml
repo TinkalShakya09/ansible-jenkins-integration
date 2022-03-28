@@ -7,7 +7,7 @@
   - name : Copy web page
     copy:
       dest: "/var/www/html"
-      src: "/index.html"
+      src: "/var/lib/jenkins/workspace/webproject/index.html"
        
   - name: Start the server
     service:
