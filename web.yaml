@@ -1,4 +1,6 @@
-- hosts: web
+- hosts: aws
+  vars_files:
+  - creds.yaml
   tasks:
   - name: Install httpd Software
     package:
@@ -14,4 +16,14 @@
       name: "httpd"
       state: started
       enabled: yes
+
+  - name: Sending Mail to the developer when website is updated
+    mail:
+      host: smtp.gmail.com
+      port: 587
+      username: "{{ user }}"
+      password: "{{ pass }}"
+      to: tinkalshakya283125@gmail.com
+      subject: webpage update
+      body: Your {{ ansible_hostname }} server webpage is updated.
 
