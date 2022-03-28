@@ -1,4 +1,4 @@
-- hosts: aws
+- hosts: web
   tasks:
   - name: Install httpd Software
     package:
