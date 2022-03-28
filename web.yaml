@@ -1,0 +1,17 @@
+- hosts: aws
+  tasks:
+  - name: Install httpd Software
+    package:
+      name: "httpd"
+      state: present
+  - name : Copy web page
+    copy:
+      dest: "/var/www/html"
+      src: "/index.html"
+       
+  - name: Start the server
+    service:
+      name: "httpd"
+      state: started
+      enabled: yes
+
