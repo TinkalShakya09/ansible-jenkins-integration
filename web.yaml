@@ -25,4 +25,4 @@
       password: "{{ pass }}"
       to: "tinkalshakya283125@gmail.com"
       subject: "webpage update"
-      body: "Your server webpage is updated."
+      body: "Your server webpage is updated by the developer."
