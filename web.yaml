@@ -1,6 +1,5 @@
 - hosts: aws
-  vars_files:
-  - creds.yaml
+  vars_files: creds.yaml
   tasks:
   - name: Install httpd Software
     package:
@@ -21,9 +20,9 @@
     mail:
       host: smtp.gmail.com
       port: 587
-      username: "{{ user }}"
+      secure: starttls
+      username: tinkalshakya8650@gmail.com
       password: "{{ pass }}"
-      to: tinkalshakya283125@gmail.com
-      subject: webpage update
-      body: Your {{ ansible_hostname }} server webpage is updated.
-
+      to: "tinkalshakya283125@gmail.com"
+      subject: "webpage update"
+      body: "Your server webpage is updated."
